@@ -61,7 +61,7 @@ try {
     foreach ($_POST['powers'] as $value) {
         $stmt->execute([$value]);
         $id_power=$stmt->fetchColumn();
-        $stmt1 = $db->prepare("INSERT INTO namepower (id_person, id_superpower) VALUES (?, ?)");
+        $stmt1 = $db->prepare("INSERT INTO namepower (id_person, id_power) VALUES (?, ?)");
         $stmt1 -> execute([$last_index, $id_power]);
     }
     unset($value);
