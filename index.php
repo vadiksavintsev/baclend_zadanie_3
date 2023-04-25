@@ -1,4 +1,4 @@
-?php
+<?php
 header('Content-Type: text/html; charset=UTF-8');
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 // В суперглобальном массиве $_GET PHP хранит все параметры, переданные в текущем запросе через URL.
@@ -50,8 +50,8 @@ if ($errors) {// При наличии ошибок завершаем рабо�
 }
 // Сохранение в базу данных.
 $user = 'u52989';
-$pass = '5004285';
-$db = new PDO('mysql:host=localhost;dbname=u52984', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+$pass = '5004286';
+$db = new PDO('mysql:host=localhost;dbname=u52989', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 // Подготовленный запрос. Не именованные метки.
 try {
     $stmt = $db->prepare("INSERT INTO person (name, email, year, gender, limbs, biography) VALUES (?, ?, ?, ?, ?, ?)");
@@ -72,3 +72,4 @@ exit();
 }
 // stmt - это "дескриптор состояния"
 header('Location: ?save=1');
+?>
