@@ -57,7 +57,7 @@ try {
     $stmt = $db->prepare("INSERT INTO person (name, email, year, gender, limbs, biography) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt -> execute([$_POST['name'], $_POST['email'], $_POST['year'], $_POST['gender'], $_POST['limbs'], $_POST['biography']]);
     $last_index=$db->lastInsertId();
-    $stmt = $db->prepare("SELECT id_power FROM superpower WHERE superpower = ?");
+    $stmt = $db->prepare("SELECT id_power FROM power WHERE power = ?");
     foreach ($_POST['powers'] as $value) {
         $stmt->execute([$value]);
         $id_power=$stmt->fetchColumn();
@@ -72,4 +72,4 @@ exit();
 }
 // stmt - это "дескриптор состояния"
 header('Location: ?save=1');
-?>
+
